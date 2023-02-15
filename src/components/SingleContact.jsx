@@ -1,23 +1,23 @@
 import React from 'react'
 
 const SingleContact = (props) => {
-    const contact = props.contact;
+    const selectedContact = props.selectedContact;
 
     return (
         <div id="single-contact">
             <div id="contact-info">
-                <p><b>Name:</b> </p>
-                <p><b>Email:</b> </p>
-                <p><b>Phone:</b> </p>
+                <p><b>Name:</b> {selectedContact.name}</p>
+                <p><b>Email:</b>{selectedContact.email}</p>
+                <p><b>Phone:</b>{selectedContact.phone} </p>
                 <div>
-                    <b>Address:</b>
+                    {/* <b>Address:</b> */}
                     <p>
-                        <b>Street:</b> 
+                        <b>Username:</b> {selectedContact.username}
                         <br />
-                        <b>City/State:</b> 
+                        <b>Website:</b> {selectedContact.website}
                     </p>
                 </div>
-                <p><b>Company:</b> </p>
+                <p><b>Company:</b>{selectedContact.company.name} </p>
             </div>
         </div>
     )

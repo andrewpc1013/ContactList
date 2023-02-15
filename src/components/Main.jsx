@@ -28,7 +28,7 @@ const Main = () => {
   async function selectContact(contactID) {
     try {
       const data = await fetch(`http://jsonplace-univclone.herokuapp.com/users/${contactID}`);
-      const contact = await Response.json();
+      const contact = await data.json();
 
       setSelectedContact(contact);
     } catch (error) {
@@ -44,7 +44,7 @@ const Main = () => {
       <div id="container">
         {
           selectedContact.id ? 
-          <SingleContact selectedContact={selectContact}/> :
+          <SingleContact selectedContact={selectedContact}/> :
           <ContactList contacts={contacts} setContacts={setContacts} selectContact={selectContact}/>
         }
       </div>
