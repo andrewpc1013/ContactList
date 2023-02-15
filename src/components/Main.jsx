@@ -44,7 +44,7 @@ const Main = () => {
       <div id="container">
         {
           selectedContact.id ? 
-          <SingleContact selectedContact={selectedContact}/> :
+          <SingleContact selectedContact={selectedContact} selectContact={selectContact}/> :
           <ContactList contacts={contacts} setContacts={setContacts} selectContact={selectContact}/>
         }
       </div>
