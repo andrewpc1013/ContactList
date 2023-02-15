@@ -14,8 +14,6 @@ const Main = () => {
       const result = await data.json();
 
       setContacts(result);
-
-      console.log(result);
     } catch (error) {
       console.log(error);
     }
@@ -25,12 +23,14 @@ const Main = () => {
     getContacts();
   }, []);
 
-  async function selectContact(contactID) {
+  async function selectContact(contactID, favoriteData) {
     try {
       const data = await fetch(`http://jsonplace-univclone.herokuapp.com/users/${contactID}`);
       const contact = await data.json();
 
-      setSelectedContact(contact);
+      console.log(contact);
+      setSelectedContact({...contact, ...favoriteData});
+      console.log(selectedContact);
     } catch (error) {
       console.log(error);
     }
