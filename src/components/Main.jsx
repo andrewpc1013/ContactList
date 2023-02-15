@@ -28,9 +28,8 @@ const Main = () => {
       const data = await fetch(`http://jsonplace-univclone.herokuapp.com/users/${contactID}`);
       const contact = await data.json();
 
-      console.log(contact);
       setSelectedContact({...contact, ...favoriteData});
-      console.log(selectedContact);
+      
     } catch (error) {
       console.log(error);
     }
@@ -47,6 +46,7 @@ const Main = () => {
           <SingleContact selectedContact={selectedContact} selectContact={selectContact}/> :
           <ContactList contacts={contacts} setContacts={setContacts} selectContact={selectContact}/>
         }
+        {console.log(selectedContact, selectContact)}
       </div>
     </div>
   );

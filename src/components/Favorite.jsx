@@ -2,10 +2,11 @@ import React from 'react';
 
 const Favorite = (props) => {
   const { selectedContact, selectContact } = props;
-  selectedContact.favorite = false;
+ 
   
   const updateFavoriteStatus = async ({id, favorite}) => {
     await selectContact(id, {favorite: !favorite});
+    console.log(selectedContact.id);
   };
 
   return (

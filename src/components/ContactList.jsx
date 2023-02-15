@@ -4,7 +4,7 @@ import ContactRow from './ContactRow';
 
 const ContactList = (props) => {
     const contacts=props.contacts;
-    const setContacts=props.setContacts;
+    // const setContacts=props.setContacts;
     const selectContact = props.selectContact;
     return(
     <table>
